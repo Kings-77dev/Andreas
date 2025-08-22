@@ -2,18 +2,17 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import localFont from "next/font/local";
 
 type Props = {
   open: boolean;
   onClose: () => void;
 };
 
-const fatkat = localFont({
-  src: "../MyFont/Fatkat.ttf",
-  display: "swap",
-  variable: "--font-fatkat",
-});
+// const fatkat = localFont({
+//   src: "/MyFont/Fatkat.ttf",
+//   display: "swap",
+//   variable: "--font-fatkat",
+// });
 
 export default function OverlayMenu({ open, onClose }: Props) {
   const overlayRef = useRef<HTMLDivElement | null>(null);
@@ -93,8 +92,8 @@ export default function OverlayMenu({ open, onClose }: Props) {
 
       {/* top-left logo */}
       <div
-        className={`${fatkat.className} absolute left-6 top-6 text-white font-bold leading-[1.2] 
-              text-6 sm:text-xl md:text-xl lg:text-4xl overlay-stagger select-none`}
+        className="absolute font-fatkat left-6 top-6 text-white font-bold leading-[1.2] 
+              text-6 sm:text-xl md:text-xl lg:text-4xl overlay-stagger select-none"
         style={{ letterSpacing: "0.18em" }}
       >
         <div className="mb-8">

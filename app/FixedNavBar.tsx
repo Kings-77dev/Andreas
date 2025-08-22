@@ -47,18 +47,9 @@
 //   );
 // }
 
-
-
 "use client";
-import localFont from "next/font/local";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFixedNav } from "./components/FixedNavContext";
-
-const fatkat = localFont({
-  src: "./MyFont/Fatkat.ttf",
-  display: "swap",
-  variable: "--font-fatkat",
-});
 
 type Props = { onOpenMenu?: () => void };
 
@@ -84,11 +75,10 @@ export default function FixedNavBar({ onOpenMenu }: Props) {
         >
           {/* Centered stacked logo */}
           <div
-            className={`
-              ${fatkat.className}
+            className="
               flex flex-col items-center leading-[0.8] text-black select-none
-            `}
-            style={{ letterSpacing: "0.04em" }}
+            "
+            style={{ fontFamily: "Fatkat, sans-serif", letterSpacing: "0.04em" }}
           >
             <span className="text-3xl">ANDREOPOLOGY</span>
             <span className="text-3xl -mt-1">STUDIO</span>

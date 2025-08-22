@@ -385,16 +385,11 @@
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import localFont from "next/font/local";
 import { useFixedNav } from "./FixedNavContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const fatkat = localFont({
-  src: "../MyFont/Fatkat.ttf",
-  display: "swap",
-  variable: "--font-fatkat",
-});
+
 
 type Props = {
   onOpenMenu?: () => void;
@@ -562,36 +557,21 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
         </div>
 
         {/* ANDREOPOLOGY */}
-        <span
-          id="logo-andre"
-          className={`
-    ${fatkat.className}
-    absolute
-    left-[%]      /* 👈 10% from the left edge */
-    leading-[0.9] text-black
-    text-[8vw] sm:text-[9vw] md:text-[8vw]
-    top-[32vh] sm:top-[28vh] md:top-[32vh]
-  `}
-          style={{ letterSpacing: "0.04em" }}
-        >
-          ANDREOPOLOGY
-        </span>
+       <span
+  id="logo-andre"
+  className="absolute left-[10%] leading-[0.9] text-black text-[8vw] sm:text-[9vw] md:text-[8vw] top-[32vh] sm:top-[28vh] md:top-[32vh]"
+  style={{ fontFamily: '"Fatkat", system-ui, sans-serif', letterSpacing: "0.04em" }}
+>
+  ANDREOPOLOGY
+</span>
 
-        {/* STUDIO */}
-        <span
-          id="logo-studio"
-          className={`
-    ${fatkat.className}
-    absolute
-    right-[10%]     /* 👈 10% from the right edge */
-    leading-[0.9] text-black
-    text-[8vw] sm:text-[9vw] md:text-[8vw]
-    top-[45vh] sm:top-[44vh] md:top-[50vh]
-  `}
-          style={{ letterSpacing: "0.04em" }}
-        >
-          STUDIO
-        </span>
+<span
+  id="logo-studio"
+  className="absolute right-[10%] leading-[0.9] text-black text-[8vw] sm:text-[9vw] md:text-[8vw] top-[45vh] sm:top-[44vh] md:top-[50vh]"
+  style={{ fontFamily: '"Fatkat", system-ui, sans-serif', letterSpacing: "0.04em" }}
+>
+  STUDIO
+</span>
       </div>
     </div>
   );
