@@ -179,12 +179,7 @@
 //   );
 // }
 
-
-
-
-
-
-// // Hidden on small screens. 
+// // Hidden on small screens.
 
 // "use client";
 
@@ -383,15 +378,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
 // Original but working with
 
 "use client";
@@ -419,7 +405,9 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
   const { setVisible } = useFixedNav();
 
   useLayoutEffect(() => {
-    const container = document.querySelector(".morph-container") as HTMLElement | null;
+    const container = document.querySelector(
+      ".morph-container"
+    ) as HTMLElement | null;
     const andre = document.querySelector("#logo-andre") as HTMLElement | null;
     const studio = document.querySelector("#logo-studio") as HTMLElement | null;
     const menu = document.querySelector("#menu") as HTMLElement | null;
@@ -429,7 +417,9 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
     setVisible(false);
 
     // Ensure fonts are loaded before measuring
-    (document.fonts?.ready ?? Promise.resolve()).then(() => ScrollTrigger.refresh());
+    (document.fonts?.ready ?? Promise.resolve()).then(() =>
+      ScrollTrigger.refresh()
+    );
 
     gsap.set([andre, studio, menu], {
       willChange: "transform",
@@ -461,22 +451,22 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
 
     mm.add(
       {
-        isDesktop: "(min-width: 1024px)",               // lg+
+        isDesktop: "(min-width: 1024px)", // lg+
         isTablet: "(min-width: 768px) and (max-width: 1023px)", // md-only
-        isMobile: "(max-width: 767px)",                  // < md
+        isMobile: "(max-width: 767px)", // < md
       },
       (ctx) => {
-        const { isDesktop, isTablet, isMobile } = ctx.conditions as {
+        const { isDesktop, isTablet } = ctx.conditions as {
           isDesktop: boolean;
           isTablet: boolean;
           isMobile: boolean;
         };
 
         // Device-specific targets (keeps final dock top-center for all)
-        const scaleAndre  = isDesktop ? 0.25 : isTablet ? 0.4 : 0.50;
+        const scaleAndre = isDesktop ? 0.25 : isTablet ? 0.4 : 0.5;
         const scaleStudio = scaleAndre;
 
-        const yAndre  = isDesktop ? "-35vh" : isTablet ? "-32vh" : "-28vh";
+        const yAndre = isDesktop ? "-35vh" : isTablet ? "-32vh" : "-28vh";
         const yStudio = isDesktop ? "-47vh" : isTablet ? "-42vh" : "-38vh";
 
         // When to finish the morph (controls when fixed nav appears)
@@ -572,9 +562,9 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
         </div>
 
         {/* ANDREOPOLOGY */}
-<span
-  id="logo-andre"
-  className={`
+        <span
+          id="logo-andre"
+          className={`
     ${fatkat.className}
     absolute
     left-[%]      /* 👈 10% from the left edge */
@@ -582,15 +572,15 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
     text-[8vw] sm:text-[9vw] md:text-[8vw]
     top-[32vh] sm:top-[28vh] md:top-[32vh]
   `}
-  style={{ letterSpacing: "0.04em" }}
->
-  ANDREOPOLOGY
-</span>
+          style={{ letterSpacing: "0.04em" }}
+        >
+          ANDREOPOLOGY
+        </span>
 
-{/* STUDIO */}
-<span
-  id="logo-studio"
-  className={`
+        {/* STUDIO */}
+        <span
+          id="logo-studio"
+          className={`
     ${fatkat.className}
     absolute
     right-[10%]     /* 👈 10% from the right edge */
@@ -598,10 +588,10 @@ export default function HeroMorphNav({ onOpenMenu, onDockChange }: Props) {
     text-[8vw] sm:text-[9vw] md:text-[8vw]
     top-[45vh] sm:top-[44vh] md:top-[50vh]
   `}
-  style={{ letterSpacing: "0.04em" }}
->
-  STUDIO
-</span>
+          style={{ letterSpacing: "0.04em" }}
+        >
+          STUDIO
+        </span>
       </div>
     </div>
   );
