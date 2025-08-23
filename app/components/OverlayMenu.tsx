@@ -94,10 +94,10 @@ export default function OverlayMenu({ open, onClose }: Props) {
       <div
         className="absolute font-fatkat left-6 top-6 text-white font-bold leading-[1.2] 
               text-6 sm:text-xl md:text-xl lg:text-4xl overlay-stagger select-none"
-        style={{ letterSpacing: "0.18em" }}
+  style={{ fontFamily: '"Fatkat", system-ui, sans-serif', letterSpacing: "0.18em" }}
       >
-        <div className="mb-8">
-          <h1>A</h1>
+        <div className="mb-8 ">
+          <h1 className="font-fatkat" >A</h1>
         </div>
         <div>S</div>
       </div>
