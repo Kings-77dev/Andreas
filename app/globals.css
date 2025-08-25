@@ -37,3 +37,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.focus-square-button {
+          position: relative;
+          background-color: white; /* Button background */
+          color: black; /* Button text color */
+          border: none; /* Remove default border */
+          overflow: hidden; /* Important to contain corner elements */
+        }
+
+        .focus-square-corner {
+          position: absolute;
+          width: 1.5rem; /* Increased length of the corner line */
+          height: 1.5rem; /* Increased length of the corner line */
+          border-color: black;
+          border-style: solid;
+          border-width: 0;
+          z-index: 1; /* Ensure corners are above button background */
+        }
+        .focus-square-corner.top-left {
+          top: 0;
+          left: 0;
+          border-top-width: 2px;
+          border-left-width: 2px;
+        }
+        .focus-square-corner.top-right {
+          top: 0;
+          right: 0;
+          border-top-width: 2px;
+          border-right-width: 2px;
+        }
+        .focus-square-corner.bottom-left {
+          bottom: 0;
+          left: 0;
+          border-bottom-width: 2px;
+          border-left-width: 2px;
+        }
+        .focus-square-corner.bottom-right {
+          bottom: 0;
+          right: 0;
+          border-bottom-width: 2px;
+          border-right-width: 2px;
+        }
